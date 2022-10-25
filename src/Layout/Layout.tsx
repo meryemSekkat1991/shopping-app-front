@@ -10,7 +10,9 @@ const Layout =({children}) =>{
        <NavBar/>
       </div>
       <main className="h-screen">
-        {children}
+        <div className="container mx-auto">
+          {children}
+        </div>
       </main>
       <FooterComponent/>
     </>
