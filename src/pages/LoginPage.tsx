@@ -2,10 +2,10 @@
 import React  from 'react'
 import {Button, Card, Form, Input, Link, Hero} from "react-daisyui";
 
-const HeroPage = () => {
+const LoginPage = () => {
   return (
     <main>
-      <Hero className="h-screen flex items-center justify-center hero min-h-screen text-neutral-content bg-gradient-to-r from-black via-indigo-800 to-black">
+      <Hero className="h-screen flex items-center justify-center hero min-h-screen text-neutral-content h-14 bg-gradient-to-r from-yellow-500 to-yellow-900">
         <Hero.Content className="flex items-center lg:flex-row-reverse">
           <div className="text-center lg:text-left p-10">
             <h1 className="text-5xl font-bold">Login now!</h1>
@@ -39,7 +39,7 @@ const HeroPage = () => {
                 </label>
               </Form>
               <Form className="mt-6">
-                <Button className="w-full">Login</Button>
+                <Button className="w-full btn-accent">Login</Button>
               </Form>
             </Card.Body>
           </Card>
@@ -49,4 +49,4 @@ const HeroPage = () => {
   )
 }
 
-export default HeroPage
+export default LoginPage

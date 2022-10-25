@@ -1,7 +1,7 @@
 import React from 'react';
-import {Route} from 'react-router-dom'
+import {Route, Switch} from 'react-router-dom'
 import './app.scss';
-import HeroPage from "./pages/HeroPage";
+import LoginPage from "./pages/LoginPage";
 import Layout from "./Layout/Layout";
 import ProductsPage from "./pages/ProductsPage";
 import HomePage from "./pages/HomePage";
@@ -10,17 +10,24 @@ import HomePage from "./pages/HomePage";
 function App() {
   return (
     <div>
-      <Layout>
+      <Switch>
         <Route path='/login'>
-          <HeroPage/>
+          <LoginPage/>
         </Route>
-        <Route path='/'>
-          <HomePage/>
-        </Route>
-        <Route path='/products'>
-          <ProductsPage/>
-        </Route>
-      </Layout>
+        <Layout>
+          <Switch>
+            <Route path='/home'>
+              <HomePage/>
+            </Route>
+            <Route path='/products'>
+              <ProductsPage/>
+            </Route>
+            <Route path='/test'>
+              <ProductsPage/>
+            </Route>
+          </Switch>
+        </Layout>
+      </Switch>
     </div>
   );
 }
