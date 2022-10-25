@@ -1,20 +1,20 @@
-import {Card, Button} from "react-daisyui";
 
 const ProductCard = () => {
   return (
-    <Card imageFull>
-      <Card.Image
-        src="https://api.lorem.space/image/shoes?w=400&h=225"
-        alt="Shoes"
-      />
-      <Card.Body>
-        <Card.Title tag="h2">Shoes!</Card.Title>
+    <div className="card w-96 bg-base-100 shadow-xl">
+      <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes"/></figure>
+      <div className="card-body">
+        <h2 className="card-title">
+          Shoes!
+          <div className="badge badge-secondary">NEW</div>
+        </h2>
         <p>If a dog chews shoes whose shoes does he choose?</p>
-        <Card.Actions className="justify-end">
-          <Button color="primary">Buy Now</Button>
-        </Card.Actions>
-      </Card.Body>
-    </Card>
+        <div className="card-actions justify-end">
+          <div className="badge badge-outline">Fashion</div>
+          <div className="badge badge-outline">Products</div>
+        </div>
+      </div>
+    </div>
   );
 };
 
