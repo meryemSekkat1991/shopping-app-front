@@ -17,7 +17,7 @@ function App() {
           <HeroPage/>
         </Route>
         <Route path='/'>
-          <div>lolo</div>
+          <div>HomePage</div>
         </Route>
         <Route path='/products'>
           <ProductsPage/>
