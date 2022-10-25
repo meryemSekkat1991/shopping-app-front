@@ -28,7 +28,7 @@ const NavBar = () => {
         </div>
         <div className="flex-none">
           <button className="btn avatar btn-circle btn-ghost">
-            <div className="w-10 rounded-full"><img src="https://api.lorem.space/image/face?hash=33791"/></div>
+            <div className="w-10 rounded-full"><img src="https://api.lorem.space/image/face?hash=33791" alt="mylogo"/></div>
           </button>
         </div>
       </Navbar>

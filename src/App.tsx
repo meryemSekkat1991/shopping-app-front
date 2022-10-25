@@ -1,10 +1,8 @@
 import React from 'react';
-import {BrowserRouter as Router, Route} from 'react-router-dom'
+import {Route} from 'react-router-dom'
 import './app.scss';
 import HeroPage from "./pages/HeroPage";
-import {Navbar} from "react-daisyui";
 import Layout from "./Layout/Layout";
-import FooterComponent from "./components/FooterComponent";
 import ProductsPage from "./pages/ProductsPage";
 import HomePage from "./pages/HomePage";
 
@@ -17,7 +15,7 @@ function App() {
           <HeroPage/>
         </Route>
         <Route path='/'>
-          <div>HomePage</div>
+          <HomePage/>
         </Route>
         <Route path='/products'>
           <ProductsPage/>

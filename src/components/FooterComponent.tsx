@@ -1,7 +1,6 @@
 import {Footer} from "react-daisyui";
 
 const FooterComponent = () => {
-  let url= "/";
   return (
     <Footer className="p-10 bg-neutral text-neutral-content">
       <div>
