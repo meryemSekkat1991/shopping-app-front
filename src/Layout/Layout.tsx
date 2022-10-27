@@ -9,8 +9,8 @@ const Layout =({children}) =>{
       <div>
        <NavBar/>
       </div>
-      <main className="h-screen">
-        <div className="container mx-auto">
+      <main>
+        <div className="py-20 container mx-auto">
           {children}
         </div>
       </main>

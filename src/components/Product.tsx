@@ -1,28 +1,33 @@
-import React from 'react'
-import { formatPrice } from '../utils/helpers'
-import { FaSearch } from 'react-icons/fa'
-import { Link } from 'react-router-dom'
-import { productDataType } from '../utils/productData'
+import React, {
+} from "react";
+import axios from "axios";
+import {productDataType} from "../utils/productData";
 
-const Product: React.FC<{ product: productDataType }> = ({ product }) => {
-  const { images, name, price, slug } = product
-  const image = images[0]
-  return (
-    <div>
-      <div className='container'>
-        <Link to={`/products/${slug}`}>
-          <img src={image} alt={name} />
-          <div className='link'>
-            <FaSearch />
-          </div>
-        </Link>
+let data: Array<any> = [];
+
+class Products extends React.Component {
+  public productsData: productDataType[] = [];
+
+  componentDidMount() {
+    console.log("fetch");
+    axios.get(`http://localhost:8081/api/products`)
+      .then(res => {
+        data = res.data._embedded.product;
+        console.log(data)
+        this.setState(this);
+      })
+  }
+  componentDidUpdate() {
+    document.title = `You clicked ${this.state} times`;
+  }
+
+  render() {
+    return (
+      <div>
+        {data}
       </div>
-      <footer>
-        <h5>{name}</h5>
-        <p>{formatPrice(price)}</p>
-      </footer>
-    </div>
-  )
+    );
+  }
 }
 
-export default Product
+export default Products;
