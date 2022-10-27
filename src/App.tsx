@@ -5,6 +5,8 @@ import LoginPage from "./pages/LoginPage";
 import Layout from "./Layout/Layout";
 import ProductsPage from "./pages/ProductsPage";
 import HomePage from "./pages/HomePage";
+import Product from "./components/Product";
+import SingleProductsPage from "./pages/SingleProductsPage";
 
 
 function App() {
@@ -14,17 +16,18 @@ function App() {
         <Route path='/login'>
           <LoginPage/>
         </Route>
+        <Route path='/endPoints'>
+          <Product/>
+        </Route>
         <Layout>
           <Switch>
             <Route path='/home'>
               <HomePage/>
             </Route>
-            <Route path='/products'>
+            <Route exact path='/products'>
               <ProductsPage/>
             </Route>
-            <Route path='/test'>
-              <ProductsPage/>
-            </Route>
+            <Route exact path='/products/:id' children={<SingleProductsPage />} />
           </Switch>
         </Layout>
       </Switch>

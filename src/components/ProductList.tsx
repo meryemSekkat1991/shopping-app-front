@@ -1,17 +1,25 @@
 import React from 'react'
-import GridView from "./GridView";
-import ListView from "./ListView";
-import Product from "./Product";
 import ProductCard from "./ProductCard";
+import ProductItem from "./ProductItem";
 
-const numbers = [1, 2, 3, 4, 5];
+let productsList = [{id: 1}, {id: 2}];
+
 const ProductList = () => {
-
   return (
-    <div className='grid grid-cols-3 gap-4'>
-      {numbers.map(i => {
-        return <ProductCard/>
-      })}
+    <div>
+
+      <div className='grid grid-cols-3 gap-4'>
+        {productsList.map(p => {
+          // @ts-ignore
+          return <ProductItem key={p.id} product={p}/>
+        })}
+      </div>
+      <div className='grid grid-cols-3 gap-4'>
+        {productsList.map(i => {
+          // @ts-ignore
+          return <ProductCard key={i.id} product={i}/>
+        })}
+      </div>
     </div>
   )
 }
