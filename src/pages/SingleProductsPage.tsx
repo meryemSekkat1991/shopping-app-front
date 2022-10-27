@@ -1,26 +1,38 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import axios from "axios";
-import ProductCard from "../components/ProductCard";
 import {productDataType} from "../utils/productData";
 import SingleProductCard from "../components/SingleProductCard";
 import {useParams} from "react-router-dom";
 
-const numbers = [1, 2, 3, 4];
-const doubled = numbers.map((number) => number * 2);
-console.log(doubled);
+let getId = "";
 
-let productsList = [{id: 1}, {id: 2}];
+const SingleProductPage : React.FC<{ product: productDataType | undefined }> = ({ product }) => {
+  const {id} = useParams<{ id: string }>()
+  const productData  = product;
+
+  useEffect(() => {
+    if (id) {
+      console.log(id)
+      getId = id;
+    }
+    // eslint-disable-next-line
+  }, )
+  return (
+    <div>
+      <SingleProductCard product={productData}/>
+    </div>
+  )
+}
 
 
 class SingleProductsPage extends React.Component {
   public id: number | undefined;
-  public data: productDataType[] | undefined;
-  componentDidMount() {
+  public product: productDataType | undefined;
 
-    console.log();
-    axios.get(`http://localhost:8081/api/products/1`)
+  componentDidMount() {
+    axios.get(`http://localhost:8081/api/products/${getId}`)
       .then(res => {
-        this.data = res.data;
+        this.product = res.data;
         console.log(res.data)
         this.setState(this);
       })
@@ -30,20 +42,7 @@ class SingleProductsPage extends React.Component {
   render() {
     return (
        <div>
-         <SingleProductCard product={{
-                 id: '',
-                 active: undefined,
-                 dateCreated: undefined,
-                 description: undefined,
-                 categories: undefined,
-                 imageUrl: undefined,
-                 lastUpdated: new Date(),
-                 name: '',
-                 sku: '',
-                 unitPrice: 0,
-                 unitInStock: 0,
-                 price: 0
-             }}/>
+        <SingleProductPage product={this.product}/>
        </div>
      )
    }

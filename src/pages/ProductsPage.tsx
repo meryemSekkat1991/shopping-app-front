@@ -3,12 +3,6 @@ import axios from "axios";
 import ProductCard from "../components/ProductCard";
 import {productDataType} from "../utils/productData";
 
-const numbers = [1, 2, 3, 4];
-const doubled = numbers.map((number) => number * 2);
-console.log(doubled);
-
-let productsList = [{id: 1}, {id: 2}];
-
 
 class ProductsPage extends React.Component {
   public data: productDataType[] | undefined;
@@ -26,7 +20,7 @@ class ProductsPage extends React.Component {
   render() {
      return (
        <div>
-         <div className='grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4'>
+         <div className='mt-4 grid xl:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4'>
            {this.data?.map(i => {
              return <ProductCard key={i.name} product={i}/>
            })}
