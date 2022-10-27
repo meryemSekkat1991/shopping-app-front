@@ -2,6 +2,13 @@ import React from "react";
 import {Link} from "react-router-dom";
 import {productDataType} from "../utils/productData";
 
+const numberFormat = (value: number | undefined) =>
+  new Intl.NumberFormat('en-IN', {
+    style: 'currency',
+    currency: 'INR'
+    // @ts-ignore
+  }).format(value);
+
 const ProductCard: React.FC<{ product: productDataType }> = ({ product }) => {
   return (
     <div className="card w-96 bg-base-100 shadow-xl">
@@ -16,7 +23,7 @@ const ProductCard: React.FC<{ product: productDataType }> = ({ product }) => {
           <div className="badge badge-secondary">{product.sku}</div>
         </h2>
         <p>{product.description}</p>
-        <p>{product.unitPrice}</p>
+        <p>{numberFormat(product.unitPrice)}</p>
         <div className="card-actions justify-end">
           <div className="badge badge-outline">{product.categories}</div>
           <div className="badge badge-outline">{product.active}</div>
