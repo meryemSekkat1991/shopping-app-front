@@ -14,7 +14,7 @@ const ProductCard: React.FC<{ product: productDataType }> = ({ product }) => {
     <div className="card w-96 bg-base-100 shadow-xl">
       <Link to={`/products/${product.id}`}>
         <div className='link'>
-          <figure><img src={product.imageUrl} alt="Shoes"/></figure>
+          <figure><img src={product.image_url} alt="Shoes"/></figure>
         </div>
       </Link>
       <div className="card-body">
