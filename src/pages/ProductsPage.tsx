@@ -10,8 +10,8 @@ class ProductsPage extends React.Component {
     console.log("fetch");
     axios.get(`http://localhost:8081/api/products`)
       .then(res => {
-        this.data = res.data._embedded.products;
-        console.log(res.data._embedded.products)
+        this.data = res.data;
+        console.log(res.data)
         this.setState(this);
       })
   }

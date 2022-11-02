@@ -4,7 +4,7 @@ export type productDataType = {
   dateCreated?: Date;
   description?: string;
   categories?: string
-  imageUrl?: string // add in schema
+  image_url?: string // add in schema
   lastUpdated: Date;
   name: string;
   sku: string;
