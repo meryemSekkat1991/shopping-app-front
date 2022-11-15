@@ -7,6 +7,7 @@ import ProductsPage from "./pages/ProductsPage";
 import HomePage from "./pages/HomePage";
 import Product from "./components/Product";
 import SingleProductsPage from "./pages/SingleProductsPage";
+import CreateProduct from "./pages/createProduct";
 
 
 function App() {
@@ -26,6 +27,9 @@ function App() {
             </Route>
             <Route exact path='/products'>
               <ProductsPage/>
+            </Route>
+            <Route exact path='/create-product'>
+              <CreateProduct/>
             </Route>
             <Route exact path='/products/:id' children={<SingleProductsPage />} />
           </Switch>
